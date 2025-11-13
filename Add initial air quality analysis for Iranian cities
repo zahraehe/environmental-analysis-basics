@@ -1,0 +1,62 @@
+# Air Quality Analysis in Iranian Cities
+# Environmental Engineering Project
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+print("🌍 Starting Environmental Data Analysis...")
+
+# داده‌های کیفیت هوا برای شهرهای ایران
+cities = ['Tehran', 'Mashhad', 'Isfahan', 'Shiraz', 'Tabriz']
+air_quality_data = {
+    'City': cities,
+    'PM2.5': [45, 38, 42, 35, 40],
+    'PM10': [78, 65, 72, 58, 68],
+    'NO2': [32, 28, 30, 25, 29],
+    'AQI': [112, 95, 105, 88, 98]
+}
+
+# ایجاد DataFrame
+df = pd.DataFrame(air_quality_data)
+
+print("📊 Air Quality Data:")
+print(df)
+print(f"\n📈 Dataset Shape: {df.shape}")
+
+# محاسبات ساده
+print(f"\n📋 Statistical Summary:")
+print(f"Average PM2.5: {df['PM2.5'].mean():.2f}")
+print(f"Highest AQI: {df['AQI'].max()} in {df.loc[df['AQI'].idxmax(), 'City']}")
+print(f"Lowest AQI: {df['AQI'].min()} in {df.loc[df['AQI'].idxmin(), 'City']}")
+
+# رسم نمودار
+print("\n📉 Creating visualization...")
+plt.figure(figsize=(12, 7))
+bars = plt.bar(df['City'], df['AQI'], 
+               color=['#ff6b6b', '#ffa726', '#ffee58', '#66bb6a', '#42a5f5'],
+               alpha=0.7, edgecolor='black', linewidth=1.2)
+
+plt.title('Air Quality Index (AQI) in Major Iranian Cities\nEnvironmental Engineering Analysis', 
+          fontsize=14, fontweight='bold', pad=20)
+plt.ylabel('AQI Value', fontsize=12)
+plt.xlabel('Cities', fontsize=12)
+plt.xticks(rotation=45)
+
+# اضافه کردن مقادیر روی نمودار
+for bar, value in zip(bars, df['AQI']):
+    plt.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 1, 
+             f'{value}', ha='center', va='bottom', fontweight='bold')
+
+plt.grid(axis='y', alpha=0.3)
+plt.tight_layout()
+
+# ذخیره نمودار
+plt.savefig('iran_air_quality.png', dpi=300, bbox_inches='tight')
+print("✅ Chart saved as 'iran_air_quality.png'")
+
+plt.show()
+
+print("\n🎉 Analysis completed successfully!")
+print("📁 Files generated:")
+print("   - iran_air_analysis.py")
+print("   - iran_air_quality.png")
