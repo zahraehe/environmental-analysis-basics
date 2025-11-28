@@ -1,15 +1,1 @@
-# Simple Environmental Data Analysis - Air Quality
-print("Environmental Data Analysis Started")
 
-cities = ['Tehran', 'Mashhad', 'Isfahan', 'Shiraz', 'Tabriz']
-aqi = [112, 95, 105, 88, 98]
-
-print(" Air Quality Data:")
-for city, value in zip(cities, aqi):
-    print(f"{city}: AQI = {value}")
-
-print(f"\nAverage AQI: {sum(aqi)/len(aqi):.1f}")
-print(f" Highest AQI: {max(aqi)} in Tehran")
-print(f" Lowest AQI: {min(aqi)} in Shiraz")
-
-print("zahra behjati")
