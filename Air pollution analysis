@@ -1,0 +1,59 @@
+```python
+# Air Pollution - Simple Analysis
+print("Air Pollution Analysis System")
+print("=" * 35)
+
+def get_air_quality_status(aqi):
+    """Determine air quality status based on AQI"""
+    if aqi <= 50:
+        return "Good", "Green"
+    elif aqi <= 100:
+        return "Moderate", "Yellow"
+    elif aqi <= 150:
+        return "Unhealthy for Sensitive Groups", "Orange"
+    elif aqi <= 200:
+        return "Unhealthy", "Red"
+    elif aqi <= 300:
+        return "Very Unhealthy", "Purple"
+    else:
+        return "Hazardous", "Maroon"
+
+def calculate_health_recommendations(aqi):
+    """Health recommendations based on AQI"""
+    if aqi <= 50:
+        return "Excellent conditions for outdoor activities"
+    elif aqi <= 100:
+        return "Unusually sensitive people should consider reducing prolonged outdoor exertion"
+    elif aqi <= 150:
+        return "Children, elderly and people with heart/lung disease should avoid prolonged outdoor activities"
+    elif aqi <= 200:
+        return "Everyone should reduce prolonged outdoor activities"
+    elif aqi <= 300:
+        return "Everyone should stay indoors"
+    else:
+        return "Emergency conditions - Avoid going outside"
+
+# Get user input
+city = input("Enter city name: ")
+aqi = int(input("Enter AQI value: "))
+
+# Analyze data
+status, color = get_air_quality_status(aqi)
+recommendations = calculate_health_recommendations(aqi)
+
+# Display results
+print("\n" + "=" * 35)
+print(f"Results for {city}:")
+print(f"AQI Index: {aqi}")
+print(f"Air Quality: {status}")
+print(f"Alert Color: {color}")
+
+print("\nHealth Recommendations:")
+print(recommendations)
+
+print("\nImportant Tips:")
+print("Use N95 masks")
+print("Keep windows closed")
+print("Use air purifiers")
+print("Avoid outdoor exercise")
+```
