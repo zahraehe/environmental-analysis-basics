@@ -6,7 +6,7 @@ Master's Student in Environmental Engineering | Python for Environmental Analysi
 *  Future Goals
 - Water quality analysis
 - Time series analysis
-- Aie quality analysis
+- Air quality analysis
 - Machine learning applications in environmental engineering
 
 # Contact
