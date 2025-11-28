@@ -48,4 +48,4 @@ else:
     print("Everyone should avoid outdoor activities")
 
 print("\n" + "=" * 40)
-print("💡 Note: PM2.5 are smaller and more dangerous particles")
+print("PM2.5 are smaller and more dangerous particles")
