@@ -1,52 +1,51 @@
-# analysis air quality
-print("🌍 تحلیل کننده ساده کیفیت هوا")
+# Simple Air Quality Analyzer - Beginner Version
+print("Simple Air Quality Analyzer")
 print("=" * 40)
 
-# دریافت داده از کاربر
-pm25 = float(input("لطفا مقدار PM2.5 را وارد کنید (μg/m³): "))
-pm10 = float(input("لطفا مقدار PM10 را وارد کنید (μg/m³): "))
+pm25 = float(input("Enter PM2.5 value (μg/m³): "))
+pm10 = float(input("Enter PM10 value (μg/m³): "))
 
 print("\n" + "=" * 40)
-print("📊 نتایج تحلیل:")
+print(" Analysis Results:")
 
-# تحلیل PM2.5
-print(f"\nذرات PM2.5: {pm25} μg/m³")
+# Analyze PM2.5
+print(f"\nPM2.5 Particles: {pm25} μg/m³")
 if pm25 <= 12:
-    print("✅ وضعیت: خوب - مناسب برای همه")
+    print("Status: Good - Safe for everyone")
 elif pm25 <= 35.4:
-    print("🟡 وضعیت: متوسط - حساسیت‌داران مراقب باشند")
+    print("Status: Moderate - Sensitive groups be cautious")
 elif pm25 <= 55.4:
-    print("🟠 وضعیت: ناسالم برای گروه‌های حساس")
+    print("Status: Unhealthy for sensitive groups")
 elif pm25 <= 150.4:
-    print("🔴 وضعیت: ناسالم - همه مراقب باشند")
+    print("Status: Unhealthy - Everyone should be cautious")
 else:
-    print("💀 وضعیت: بسیار خطرناک - از منزل خارج نشوید")
+    print("Status: Hazardous - Avoid going outside")
 
-# تحلیل PM10
-print(f"\nذرات PM10: {pm10} μg/m³")
+# Analyze PM10
+print(f"\nPM10 Particles: {pm10} μg/m³")
 if pm10 <= 54:
-    print("✅ وضعیت: خوب - مناسب برای همه")
+    print("Status: Good - Safe for everyone")
 elif pm10 <= 154:
-    print("🟡 وضعیت: متوسط - حساسیت‌داران مراقب باشند")
+    print("Status: Moderate - Sensitive groups be cautious")
 elif pm10 <= 254:
-    print("🟠 وضعیت: ناسالم برای گروه‌های حساس")
+    print("Status: Unhealthy for sensitive groups")
 elif pm10 <= 354:
-    print("🔴 وضعیت: ناسالم - همه مراقب باشند")
+    print("Status: Unhealthy - Everyone should be cautious")
 else:
-    print("💀 وضعیت: بسیار خطرناک - از منزل خارج نشوید")
+    print("Status: Hazardous - Avoid going outside")
 
-# تحلیل کلی
+# Overall recommendations
 print("\n" + "=" * 40)
-print("🎯 توصیه‌های سلامت:")
+print("Health Recommendations:")
 
 if pm25 <= 12 and pm10 <= 54:
-    print("✅ شرایط عالی! می‌توانید فعالیت‌های بیرون را انجام دهید")
+    print("Excellent conditions! You can do outdoor activities")
 elif pm25 <= 35.4 and pm10 <= 154:
-    print("🟡 شرایط قابل قبول - افراد حساس محدودیت قائل شوند")
+    print("Acceptable conditions - Sensitive people should limit exposure")
 elif pm25 <= 55.4 and pm10 <= 254:
-    print("🟠 کودکان، سالمندان و بیماران در فضای باز فعالیت نکنند")
+    print("Children, elderly, and sick people should avoid outdoor activities")
 else:
-    print("🔴 همه افراد از فعالیت در فضای باز خودداری کنند")
+    print("Everyone should avoid outdoor activities")
 
 print("\n" + "=" * 40)
-print("💡 نکته: PM2.5 ذرات ریزتر و خطرناک‌تر هستند")
+print("💡 Note: PM2.5 are smaller and more dangerous particles")
