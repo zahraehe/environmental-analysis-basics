@@ -1,0 +1,34 @@
+gram
+def water_quality():
+    print("=== Water Quality Analysis ===")
+    
+    # Get water parameters
+    ph = float(input("Enter pH value (0-14): "))
+    tds = float(input("Enter TDS (mg/L): "))
+    bod = float(input("Enter BOD (mg/L): "))
+    
+    print("\n--- Results ---")
+    
+    # Check pH
+    if 6.5 <= ph <= 8.5:
+        print("pH is good")
+    else:
+        print("Bad pH level")
+    
+    # Check TDS
+    if tds <= 500:
+        print("TDS is acceptable")
+    else:
+        print("High TDS")
+    
+    # Check BOD
+    if bod <= 30:
+        print("BOD is safe")
+    elif bod <= 100:
+        print("Medium BOD")
+    else:
+        print("Very high BOD")
+
+# Run
+
+water_quality()
