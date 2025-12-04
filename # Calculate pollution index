@@ -1,0 +1,20 @@
+# Calculate pollution index
+print("=== Pollution Index Calculator ===")
+
+# Get factors
+cars = int(input("Number of cars in area: "))
+factories = int(input("Number of factories: "))
+temperature = float(input("Temperature (°C): "))
+
+# Simple calculation
+pollution_index = (cars * 0.5) + (factories * 2) + (temperature * 0.1)
+
+print(f"\nPollution Index: {pollution_index:.1f}")
+
+# Health message
+if pollution_index < 10:
+    print("Health risk: Low")
+elif pollution_index < 20:
+    print("Health risk: Medium")
+else:
+    print("Health risk: High")
