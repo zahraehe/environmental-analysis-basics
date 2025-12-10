@@ -1,0 +1,44 @@
+# Input data
+ph = float(input("pH value (0-14): "))
+temp = float(input("Temperature (°C): "))
+heavy_metal = float(input("Heavy metals (mg/L): "))
+chemical_oxygen = float(input("Chemical Oxygen Demand (mg/L): "))
+
+# Initialize warnings
+warnings = []
+
+# Check pH
+if ph < 6 or ph > 9:
+    warnings.append("pH is dangerous")
+
+# Check temperature
+if temp > 40:
+    warnings.append("Temperature too high")
+
+# Check heavy metals
+if heavy_metal > 2:
+    warnings.append("High heavy metals")
+
+# Check COD
+if chemical_oxygen > 250:
+    warnings.append("High chemical pollution")
+
+# Display results
+print("\n=== ANALYSIS RESULTS ===")
+print(f"pH: {ph} | Temp: {temp}°C")
+print(f"Heavy metals: {heavy_metal} mg/L")
+print(f"COD: {chemical_oxygen} mg/L")
+
+# Show warnings
+if warnings:
+    print("\nWARNINGS:")
+    for warning in warnings:
+        print(f"- {warning}")
+    print("Wastewater needs treatment!")
+else:
+    print("\nWastewater is SAFE for release")
+
+# Calculate treatment cost
+danger_level = len(warnings)
+cost = danger_level * 5000
+print(f"\nEstimated treatment cost: ${cost}")
